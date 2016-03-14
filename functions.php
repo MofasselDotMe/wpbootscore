@@ -135,3 +135,8 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * wp_bootstrap_navwalker additions.
+ */
+require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
