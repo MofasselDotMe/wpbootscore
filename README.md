@@ -9,6 +9,8 @@ WPImtiaz
 * A helpful 404 template.
 * A sample custom header
 * Custom template tags
+* Boostrap 3.3.5 
+* WP Bootstrap Navwalker
 
 * Licensed under GPLv2 or later. :) Use it to make something cool.
 
