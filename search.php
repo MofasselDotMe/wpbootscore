@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-area col-sm-8">
 		<main id="main" class="site-main" role="main">
 
 		<?php
