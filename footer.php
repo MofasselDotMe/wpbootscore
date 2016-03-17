@@ -12,11 +12,37 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer container-fluid" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wpimtiaz' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'wpimtiaz' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'wpimtiaz' ), 'wpimtiaz', '<a href="http:imtiaz.me" rel="designer">Imtiaz Khan</a>' ); ?>
-		</div><!-- .site-info -->
+		
+
+		<?php get_sidebar('footer'); ?>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="site-info">
+						&copy; Copyright <?php echo date('Y'); ?> <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+					</div><!-- .site-info -->
+				</div>
+				<div class="col-sm-6">
+					<nav class="footer-links">
+						<?php
+				            wp_nav_menu( array(
+				                'menu'              => 'footer-links',
+				                'theme_location'    => 'footer-links',
+				                'depth'             => 1,
+				                'container'         => 'div',
+				                'container_class'   => '',
+				        		'container_id'      => '',
+				                'menu_class'        => 'nav navbar-nav',
+				                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+				                'walker'            => new wp_bootstrap_navwalker())
+				            );
+				        ?>
+					</nav>
+				</div>
+			</div>
+		</div>
+		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

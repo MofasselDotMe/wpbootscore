@@ -34,6 +34,7 @@ function wpimtiaz_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'wpimtiaz' ),
+		'footer-links' => esc_html__( 'Footer Links', 'wpimtiaz' ),
 	) );
 
 	/*
@@ -85,17 +86,29 @@ add_action( 'after_setup_theme', 'wpimtiaz_content_width', 0 );
  *
  */
 function wpimtiaz_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'wpimtiaz' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+
+	function create_wpimtiaz_widget($name, $id, $desc ){
+		register_sidebar( array(
+			'name'          => $name,
+			'id'            => $id,
+			'description'   => $desc,
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+	}
+
+	create_wpimtiaz_widget('Main Sidebar', 'main', 'Default Sidebar');
+	create_wpimtiaz_widget('Left Sidebar', 'left', 'Sidebar widget will be displayed in left sidebar template only');
+	create_wpimtiaz_widget('Footer Left Widget', 'footer_left', 'Widget will be displayed in footer left widget area');
+	create_wpimtiaz_widget('Footer Middle Widget', 'footer_middle', 'Widget will be displayed in footer middle widget area');
+	create_wpimtiaz_widget('Footer Right Widget', 'footer_right', 'Widget will be displayed in footer right widget area');
+
 }
 add_action( 'widgets_init', 'wpimtiaz_widgets_init' );
+
+
 
 /**
  * Enqueue scripts and styles.
@@ -103,6 +116,7 @@ add_action( 'widgets_init', 'wpimtiaz_widgets_init' );
 function wpimtiaz_scripts() {
 
 	wp_enqueue_style('wpimtiaz-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css');
+	wp_enqueue_style('wpimtiaz-fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css');
 
 	wp_enqueue_style( 'wpimtiaz-style', get_stylesheet_uri() );
 
