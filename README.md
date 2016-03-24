@@ -1,7 +1,7 @@
-WPImtiaz
+WPBootScore
 ===
 
-# Hi. I'm a starter theme called `WPImtiaz`.
+# Hi. I'm a starter theme called `WPBootScore`.
 
 ## Theme supports so far:
 
