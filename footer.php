@@ -14,7 +14,7 @@
 	<footer id="colophon" class="site-footer container-fluid" role="contentinfo">
 		
 
-		<?php get_sidebar('footer'); ?>
+		<?php get_footer('top'); ?>
 
 		<div class="container">
 			<div class="row">
