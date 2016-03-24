@@ -18,4 +18,4 @@ WPBootScore
 
 * Licensed under GPLv2 or later. :) Use it to make something cool.
 
-Good luck!
+##Good luck!
