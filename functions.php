@@ -1,21 +1,21 @@
 <?php
 /**
- * wpimtiaz functions and definitions.
+ * wpbootscore functions and definitions.
  *
- * @package wpimtiaz
+ * @package wpbootscore
  */
 
-if ( ! function_exists( 'wpimtiaz_setup' ) ) :
+if ( ! function_exists( 'wpbootscore_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  */
-function wpimtiaz_setup() {
+function wpbootscore_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 */
-	load_theme_textdomain( 'wpimtiaz', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'wpbootscore', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -33,8 +33,8 @@ function wpimtiaz_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'wpimtiaz' ),
-		'footer-links' => esc_html__( 'Footer Links', 'wpimtiaz' ),
+		'primary' => esc_html__( 'Primary', 'wpbootscore' ),
+		'footer-links' => esc_html__( 'Footer Links', 'wpbootscore' ),
 	) );
 
 	/*
@@ -61,13 +61,13 @@ function wpimtiaz_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'wpimtiaz_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'wpbootscore_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
 endif;
-add_action( 'after_setup_theme', 'wpimtiaz_setup' );
+add_action( 'after_setup_theme', 'wpbootscore_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -76,18 +76,18 @@ add_action( 'after_setup_theme', 'wpimtiaz_setup' );
  *
  * @global int $content_width
  */
-function wpimtiaz_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'wpimtiaz_content_width', 640 );
+function wpbootscore_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'wpbootscore_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'wpimtiaz_content_width', 0 );
+add_action( 'after_setup_theme', 'wpbootscore_content_width', 0 );
 
 /**
  * Register widget area.
  *
  */
-function wpimtiaz_widgets_init() {
+function wpbootscore_widgets_init() {
 
-	function create_wpimtiaz_widget($name, $id, $desc ){
+	function create_wpbootscore_widget($name, $id, $desc ){
 		register_sidebar( array(
 			'name'          => $name,
 			'id'            => $id,
@@ -99,36 +99,36 @@ function wpimtiaz_widgets_init() {
 		) );
 	}
 
-	create_wpimtiaz_widget('Main Sidebar', 'main', 'Default Sidebar');
-	create_wpimtiaz_widget('Left Sidebar', 'left', 'Sidebar widget will be displayed in left sidebar template only');
-	create_wpimtiaz_widget('Footer Left Widget', 'footer_left', 'Widget will be displayed in footer left widget area');
-	create_wpimtiaz_widget('Footer Middle Widget', 'footer_middle', 'Widget will be displayed in footer middle widget area');
-	create_wpimtiaz_widget('Footer Right Widget', 'footer_right', 'Widget will be displayed in footer right widget area');
+	create_wpbootscore_widget('Main Sidebar', 'main', 'Default Sidebar');
+	create_wpbootscore_widget('Left Sidebar', 'left', 'Sidebar widget will be displayed in left sidebar template only');
+	create_wpbootscore_widget('Footer Left Widget', 'footer_left', 'Widget will be displayed in footer left widget area');
+	create_wpbootscore_widget('Footer Middle Widget', 'footer_middle', 'Widget will be displayed in footer middle widget area');
+	create_wpbootscore_widget('Footer Right Widget', 'footer_right', 'Widget will be displayed in footer right widget area');
 
 }
-add_action( 'widgets_init', 'wpimtiaz_widgets_init' );
+add_action( 'widgets_init', 'wpbootscore_widgets_init' );
 
 
 
 /**
  * Enqueue scripts and styles.
  */
-function wpimtiaz_scripts() {
+function wpbootscore_scripts() {
 
-	wp_enqueue_style('wpimtiaz-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css');
-	wp_enqueue_style('wpimtiaz-fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css');
+	wp_enqueue_style('wpbootscore-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css');
+	wp_enqueue_style('wpbootscore-fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css');
 
-	wp_enqueue_style( 'wpimtiaz-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'wpbootscore-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'wpimtiaz-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.5', true );
+	wp_enqueue_script( 'wpbootscore-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.5', true );
 
-	wp_enqueue_script( 'wpimtiaz-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'wpbootscore-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'wpimtiaz_scripts' );
+add_action( 'wp_enqueue_scripts', 'wpbootscore_scripts' );
 
 /**
  * Implement the Custom Header feature.

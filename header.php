@@ -5,7 +5,7 @@
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  *
- * @package wpimtiaz
+ * @package wpbootscore
  */
 
 ?><!DOCTYPE html>
@@ -21,7 +21,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wpimtiaz' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wpbootscore' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 

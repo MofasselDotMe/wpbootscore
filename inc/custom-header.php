@@ -12,33 +12,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package wpimtiaz
+ * @package wpbootscore
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses wpimtiaz_header_style()
+ * @uses wpbootscore_header_style()
  */
-function wpimtiaz_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'wpimtiaz_custom_header_args', array(
+function wpbootscore_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'wpbootscore_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'wpimtiaz_header_style',
+		'wp-head-callback'       => 'wpbootscore_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'wpimtiaz_custom_header_setup' );
+add_action( 'after_setup_theme', 'wpbootscore_custom_header_setup' );
 
-if ( ! function_exists( 'wpimtiaz_header_style' ) ) :
+if ( ! function_exists( 'wpbootscore_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see wpimtiaz_custom_header_setup().
+ * @see wpbootscore_custom_header_setup().
  */
-function wpimtiaz_header_style() {
+function wpbootscore_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*

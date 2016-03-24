@@ -2,7 +2,7 @@
 /**
  Template Name: Left Sidebar Template
  *
- * @package wpimtiaz
+ * @package wpbootscore
  */
 
 get_header(); ?>

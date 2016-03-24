@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package wpimtiaz
+ * @package wpbootscore
  */
 
 if ( ! is_active_sidebar( 'main' ) ) {

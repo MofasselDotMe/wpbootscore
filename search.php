@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package wpimtiaz
+ * @package wpbootscore
  */
 
 get_header(); ?>
@@ -14,7 +14,7 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'wpimtiaz' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'wpbootscore' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php

@@ -2,7 +2,7 @@
 /**
  * The main template file.
  *
- * @package wpimtiaz
+ * @package wpbootscore
  */
 
 get_header(); ?>

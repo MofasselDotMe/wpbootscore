@@ -2,7 +2,7 @@
 /**
  * The template for displaying all pages.
  *
- * @package wpimtiaz
+ * @package wpbootscore
  */
 
 get_header(); ?>

@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package wpimtiaz
+ * @package wpbootscore
  */
 
 get_header(); ?>
