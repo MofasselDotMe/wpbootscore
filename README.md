@@ -15,6 +15,8 @@ WPBootScore
 * Left sidebar template
 * Footer dynamic copyright info section
 * Footer links menu 
+* Added Slider Custom post type
+* Added bootstrap slider functionality
 
 * Licensed under GPLv2 or later. :) Use it to make something cool.
 

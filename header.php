@@ -16,6 +16,12 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<style>
+    .carousel-inner .item img {
+      width: 100%;
+    }
+</style>
+
 <?php wp_head(); ?>
 </head>
 
@@ -65,6 +71,8 @@
     </div>
     
 	</header><!-- #masthead -->
+
+    <?php get_template_part('template-parts/tp-slider'); ?>
 
 	<div id="content" class="site-content container">
 
