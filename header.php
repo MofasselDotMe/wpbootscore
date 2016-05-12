@@ -61,12 +61,14 @@
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
             <img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
         </a>
-        <?php endif; // End header image check. ?>
+    <?php else : ?>
+        <?php get_template_part('template-parts/tp-slider'); ?>
+    <?php endif; // End header image check. ?>
     </div>
     
 	</header><!-- #masthead -->
 
-    <?php get_template_part('template-parts/tp-slider'); ?>
+    
 
 	<div id="content" class="site-content container">
 

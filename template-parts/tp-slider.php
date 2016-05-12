@@ -1,7 +1,7 @@
 <?php $args = array (
 					'post_type' => 'slide',
 					'posts_per_page' => -1,
-					'category_name' => '',
+					'slider_cat' => '',
 					'orderby' => 'menu_order',
 					'order' => 'ASC',
 			);
@@ -20,9 +20,19 @@
 			  	<div class="carousel-inner" role="listbox">
 
 				<?php while ( $slider_query->have_posts() ) : $slider_query->the_post(); ?>
+
+	<?php 
+		$slide_url = get_post_meta($post->ID, 'wpbs_text', true);
+	?>
+
 			    	<div class="item">
+			    	<?php if( $slide_url ) : ?>
+			    		<a href="<?php echo esc_url($slide_url); ?>">
 			      		<?php the_post_thumbnail( 'full' ); ?>
-			      		
+			      		</a>
+			      	<?php else : ?>
+						<?php the_post_thumbnail( 'full' ); ?>
+			      	<?php endif; ?>
 			      		<div class="container">
 				        	<div class="carousel-caption">
 				          		<h1><?php the_title(); ?></h1>

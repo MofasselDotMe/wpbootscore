@@ -17,6 +17,8 @@ WPBootScore
 * Footer links menu 
 * Added Slider Custom post type
 * Added bootstrap slider functionality
+* added cmb2 metabox support
+* added and quarried icon based service section
 
 * Licensed under GPLv2 or later. :) Use it to make something cool.
 
