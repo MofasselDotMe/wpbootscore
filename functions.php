@@ -121,6 +121,7 @@ function wpbootscore_scripts() {
 	wp_enqueue_style( 'wpbootscore-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'wpbootscore-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.5', true );
+	wp_enqueue_script( 'wpbootscore-mixitup', get_template_directory_uri() . '/js/jquery.mixitup.min.js', array('jquery'), '', true );
 
 	wp_enqueue_script( 'wpbootscore-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -169,7 +170,20 @@ require get_template_directory() . '/inc/metaboxes/cmb-functions.php';
 
 
 
+// Function 'add_portfolio_filter_into_post_class' starts
+function add_portfolio_filter_into_post_class( $post_classes) {
+
+	$filters = get_the_terms( get_the_ID(), 'portfolio_filter' );
+
+	foreach ($filters as $filter) {
+		$post_classes[] = $filter->slug;
+	}
+	return $post_classes;
+} 
+// Function 'add_portfolio_filter_into_post_class' ends
 
 
+add_action( 'post_class', 'add_portfolio_filter_into_post_class' );
+// Hook into the 'post_class' action
 
 

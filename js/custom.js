@@ -1,7 +1,10 @@
-	
-	// added active class with boostrap slider item
+(function($){
 
-	(function($){
-		$(".carousel-inner .item:first").addClass("active");
-		$(".carousel-indicators li:first").addClass("active");
-	})(jQuery);
+	// added active class with boostrap slider item
+	$(".carousel-inner .item:first").addClass("active");
+	$(".carousel-indicators li:first").addClass("active");
+
+	// Instantiate MixItUp:
+	$('#wrapper').mixItUp();
+
+})(jQuery);

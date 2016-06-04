@@ -29,3 +29,26 @@ $args = array(
 	'rewrite'             => array( 'slug' => 'portfolio' ),
 );
 register_post_type( 'portfolio', $args );
+
+
+/****************************************************
+* Register custom taxonomy for portfolio_filter post type
+*****************************************************/
+
+$labels = array(
+	'name'					=> _x( 'Portfolio Filter', 'Taxonomy General Name', 'wpbootscore' ),
+	'singular_name'			=> _x( 'Portfolio Filter', 'Taxonomy Singular Name', 'wpbootscore' ),
+	'add_new_item'			=> __( 'Add New Portfolio Filter', 'wpbootscore' ),
+	'edit_item'				=> __( 'Edit Portfolio Filter', 'wpbootscore' ),
+	'update_item'			=> __( 'Update Portfolio Filter', 'wpbootscore' ),
+	'add_or_remove_items'	=> __( 'Add or remove Portfolio Filter', 'wpbootscore' ),
+);
+
+$args = array(
+	'labels'            => $labels,
+	'public'            => true,
+	'hierarchical'      => true,
+	'rewrite'             => array( 'slug' => 'portfolio_filter' ),
+);
+
+register_taxonomy( 'portfolio_filter', array( 'portfolio' ), $args );
